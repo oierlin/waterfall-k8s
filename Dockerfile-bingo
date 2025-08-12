@@ -1,0 +1,16 @@
+FROM docker.1ms.run/eclipse-temurin:21-jre
+WORKDIR /home/ubuntu
+
+COPY BingoReloaded-3.2.0.jar /home/ubuntu/plugins/BingoReloaded-3.2.0.jar
+COPY packetevents-spigot-2.9.4.jar /home/ubuntu/plugins/packetevents-spigot-2.9.4.jar
+COPY paper-1.21.8-28.jar /home/ubuntu/paper-1.21.8-28.jar
+COPY eula.txt /home/ubuntu/eula.txt
+COPY server.properties /home/ubuntu/server.properties
+COPY spigot.yml /home/ubuntu/spigot.yml
+
+EXPOSE 25577
+
+RUN echo stop | java -Xmx4G -Xms4G -jar paper-1.21.8-28.jar
+CMD ["java", "-Xmx4G", "-Xms4G", "-jar", "paper-1.21.8-28.jar"]
+
+LABEL version="1.0" description="BingoReloaded-3.2.0镜像初版"

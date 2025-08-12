@@ -1,0 +1,10 @@
+FROM docker.1ms.run/eclipse-temurin:21-jre
+WORKDIR /home/ubuntu
+
+COPY config.yml /home/ubuntu/config.yml
+COPY ../waterfall-1.21-598.jar /home/ubuntu/waterfall-1.21-598.jar
+
+EXPOSE 25577
+
+RUN echo end | java -Xms512M -Xmx1024M -Dfile.encoding=UTF-8 -jar waterfall-1.21-598.jar
+CMD ["java", "-Xms512M", "-Xmx1024M", "-Dfile.encoding=UTF-8", "-jar", "waterfall-1.21-598.jar"]
