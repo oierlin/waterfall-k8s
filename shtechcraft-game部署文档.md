@@ -1,5 +1,5 @@
 # 架构
-![[https://github.com/oierlin/waterfall-k8s/blob/main/deepseek_mermaid_20250811_7ecbc4.png]]
+![https://github.com/oierlin/waterfall-k8s/blob/main/deepseek_mermaid_20250811_7ecbc4.png]
 # 镜像制作
 ## waterfall
 `Dockerfile`:
